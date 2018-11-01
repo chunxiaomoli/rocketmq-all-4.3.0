@@ -159,6 +159,10 @@ public abstract class NettyRemotingAbstract {
     }
 
     /**
+     *
+     * 该方法其实就是一个具体命令的处理模板（模板方法），具体的命令实现由各个子类实现，该类的主要责任就是将命令封装成一个线程对象，
+     * 然后丢到线程池去执行。
+     *
      * Process incoming request command issued by remote peer.
      *
      * @param ctx channel handler context.
