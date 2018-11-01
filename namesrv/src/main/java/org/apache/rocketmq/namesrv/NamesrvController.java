@@ -84,6 +84,9 @@ public class NamesrvController {
 
         this.registerProcessor();
 
+        /**
+         * 每隔10s扫描没有存活的broker
+         */
         this.scheduledExecutorService.scheduleAtFixedRate(new Runnable() {
 
             @Override
@@ -92,6 +95,9 @@ public class NamesrvController {
             }
         }, 5, 10, TimeUnit.SECONDS);
 
+        /**
+         * 每隔10s打印kvConfig的信息
+         */
         this.scheduledExecutorService.scheduleAtFixedRate(new Runnable() {
 
             @Override
