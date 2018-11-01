@@ -536,6 +536,7 @@ public abstract class NettyRemotingAbstract {
             final ChannelEventListener listener = NettyRemotingAbstract.this.getChannelEventListener();
 
             while (!this.isStopped()) {
+                log.info("service has stopped:" + this.isStopped());
                 try {
                     NettyEvent event = this.eventQueue.poll(3000, TimeUnit.MILLISECONDS);
                     if (event != null && listener != null) {
